@@ -17,6 +17,8 @@ Route::get('/', 'MainController@index');
 
 Route::get('/page/{page}', 'MainController@indexByPage');
 
+Route::get('/details/{id}', 'DetailController@indexById');
+
 Route::get('/login', function () {
     return view('login');
 });

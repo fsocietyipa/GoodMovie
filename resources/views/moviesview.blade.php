@@ -1,29 +1,3 @@
-{{--<div class="links">--}}
-{{--        <table class="table">--}}
-{{--            <thead>--}}
-{{--            <tr>--}}
-{{--                <th scope="col">Poster</th>--}}
-{{--                <th scope="col">Overview</th>--}}
-{{--                <th scope="col">Vote Average</th>--}}
-{{--            </tr>--}}
-{{--            </thead>--}}
-{{--            <tbody>--}}
-{{--            @foreach ($movieObject->results as $movie)--}}
-{{--                <tr>--}}
-{{--                    <th scope="row">--}}
-{{--                        <img width=220 height=330 src="https://image.tmdb.org/t/p/w440_and_h660_face{{ $movie->poster_path }}">--}}
-{{--                    </th>--}}
-{{--                    <td>{{ $movie->title }} \n {{ $movie->overview }}</td>--}}
-{{--                    <td>{{ $movie->vote_average }}</td>--}}
-{{--                </tr>--}}
-
-{{--            @endforeach--}}
-{{--            </tbody>--}}
-{{--        </table>--}}
-{{--</div>--}}
-
-
-
 <div class="movie-list">
     <div class="title-bar">
         <div class="left">
@@ -37,11 +11,13 @@
 </div>
 <ul class="list">
     @foreach ($movieObject->results as $movie)
+        <a href="/details/{{$movie->id}}">
         <li>
             <img width=220 height=330 src="https://image.tmdb.org/t/p/w440_and_h660_face{{ $movie->poster_path }}" alt="" class="cover" />
             <p class="title">{{ $movie->title }}</p>
 {{--            <p class="genre">{{ $movie->original_language }}</p>--}}
         </li>
+        </a>
     @endforeach
 
 </ul>
@@ -124,7 +100,7 @@
         height: 330px;
         content: '\f144';
         background: rgba(0,0,0,.3);
-        border-radius: 10px;
+        border-radius: 15px;
         opacity: 0;
         color: #FFF;
         font-size: 40px;
@@ -151,7 +127,7 @@
         display: block;
         margin: 0 auto 5px auto;
         cursor: pointer;
-        border-radius: 10px;
+        border-radius: 15px;
     }
 
     .title, .genre {

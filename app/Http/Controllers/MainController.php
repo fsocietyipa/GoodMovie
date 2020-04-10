@@ -15,6 +15,8 @@ class MainController extends Controller
             $j = $res->getBody();
             $movieObject = json_decode($j);
             return view('moviesview', ["movieObject" => $movieObject, "currentPage" => 1]);
+        } else {
+            return view('errorview');
         }
     }
 
@@ -26,6 +28,8 @@ class MainController extends Controller
             $j = $res->getBody();
             $obj = json_decode($j);
             return view('moviesview', ["movieObject" => $obj, "currentPage" => $page]);
+        } else {
+            return view('errorview');
         }
     }
 }

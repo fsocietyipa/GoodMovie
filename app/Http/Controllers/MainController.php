@@ -8,7 +8,8 @@ use App\Http\Controllers\Controller;
 class MainController extends Controller
 {
     public function index() {
-        $url = "https://api.themoviedb.org/3/movie/upcoming?api_key=b0059d0925aeb81024bf0d7251c3eefc";
+        $apiKey = config('services.api.key');
+        $url = "https://api.themoviedb.org/3/movie/upcoming?api_key={$apiKey}";
         $client = new \GuzzleHttp\Client();
         $res = $client->get($url);
         if ($res->getStatusCode() == 200) {
@@ -21,7 +22,8 @@ class MainController extends Controller
     }
 
     public function indexByPage($page) {
-        $url = "https://api.themoviedb.org/3/movie/upcoming?api_key=b0059d0925aeb81024bf0d7251c3eefc&page={$page}";
+        $apiKey = config('services.api.key');
+        $url = "https://api.themoviedb.org/3/movie/upcoming?api_key={$apiKey}&page={$page}";
         $client = new \GuzzleHttp\Client();
         $res = $client->get($url);
         if ($res->getStatusCode() == 200) {

@@ -8,7 +8,8 @@ use App\Http\Controllers\Controller;
 
 class DetailController extends Controller {
     public function indexById($id) {
-        $url = "https://api.themoviedb.org/3/movie/{$id}?api_key=b0059d0925aeb81024bf0d7251c3eefc&page";
+        $apiKey = config('services.api.key');
+        $url = "https://api.themoviedb.org/3/movie/{$id}?api_key={$apiKey}";
         $client = new \GuzzleHttp\Client();
         $res = $client->get($url);
         if ($res->getStatusCode() == 200) {

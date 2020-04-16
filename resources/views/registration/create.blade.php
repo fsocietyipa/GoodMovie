@@ -1,8 +1,4 @@
-{{--@extends('layouts.master')--}}
-
-{{--@section('content')--}}
-
-    <h2>Register</h2>
+<h2>Register</h2>
     <form method="POST" action="/register">
         {{ csrf_field() }}
 
@@ -17,9 +13,15 @@
         </div>
 
         <div class="form-group">
+            <label for="password_confirmation">Password Confirmation:</label>
+            <input type="password" class="form-control" id="password_confirmation"
+                   name="password_confirmation">
+        </div>
+
+        <div class="form-group">
             <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
         </div>
-{{--        @include('partials.formerrors')--}}
+        @include('partials.formerrors')
     </form>
 
-{{--@endsection--}}
+

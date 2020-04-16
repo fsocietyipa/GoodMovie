@@ -4,8 +4,8 @@
             <p class="bold">Upcoming movies</p>
         </div>
         <div class="right">
-            <a href="register">Register</a>
-            <a class="blue1" href="login">Login</a>
+            <a href="{{ url('register') }}">Register</a>
+            <a class="blue1" href="{{ url('login') }}">Login</a>
         </div>
     </div>
 </div>

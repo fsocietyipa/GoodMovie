@@ -19,9 +19,10 @@ Route::get('/page/{page}', 'MainController@indexByPage');
 
 Route::get('/details/{id}', 'DetailController@indexById');
 
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/register', function () {
-    return view('register');
-});
+
+Route::get('/register', 'RegistrationController@create');
+Route::post('register', 'RegistrationController@store');
+ 
+Route::get('/login', 'SessionsController@create');
+Route::post('/login', 'SessionsController@store');
+Route::get('/logout', 'SessionsController@destroy');

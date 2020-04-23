@@ -28,3 +28,5 @@ Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy');
 
 Route::get('/userpage', 'UserController@index');
+Route::post('/changePassword','UserController@changePassword')->name('changePassword');
+

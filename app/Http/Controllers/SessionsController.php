@@ -20,7 +20,7 @@ class SessionsController extends Controller
             ]);
         }
 
-        return redirect()->to('/');
+        return redirect()->to('/userpage');
     }
 
     public function destroy()

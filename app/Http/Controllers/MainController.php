@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\FavouriteList;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 
 class MainController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $apiKey = config('services.api.key');
         $url = "https://api.themoviedb.org/3/movie/upcoming?api_key={$apiKey}";
         $client = new \GuzzleHttp\Client();

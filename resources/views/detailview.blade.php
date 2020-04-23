@@ -22,9 +22,23 @@
     <div class="container">
 
         <a href="#"><img  width=200 height=300 src="https://image.tmdb.org/t/p/original/{{$detailObject->poster_path}}" alt="cover" class="cover" /></a>
-
         <div class="hero">
-
+            @if($isLoggedIn == true)
+                <span class="like-btn">
+                    @if($isFavourite == true)
+                        <a href="/detailsLike/{{$detailObject->id}}">
+                            <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/favouriteFull.png') !!}"/>
+                        </a>
+                    @else
+                        <a href="/detailsLike/{{$detailObject->id}}">
+                            <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/favouriteEmpty.png') !!}"/>
+                        </a>
+                    @endif
+                </span>
+                <a href="/favouriteList">
+                    <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/favListIcon.png') !!}"/>
+                </a>
+            @endif
             <div class="details">
                 @if($detailObject->adult == true)
                     <div class="title1">{{$detailObject->title}}<span>18+</span></div>
@@ -47,9 +61,7 @@
                 </fieldset>
 
                 <span class="likes">{{$detailObject->vote_count}} votes</span>
-
             </div>
-
         </div>
 
         <div class="description">

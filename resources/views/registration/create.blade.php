@@ -1,21 +1,20 @@
 <style>
     .login-box {
-        margin: 250px auto;
+        margin: 250px 540px;
         width: 500px;
         height: 300px;
         background-color: #fff;
         padding: 10px;
-        position:relative;
-
+        position: absolute;
     }
     .lb-header{
-        position:relative;
+        position: relative;
         color: #00415d;
-        margin: 5px 5px 10px 5px;
-        padding-bottom:10px;
+        margin: 5px 5px 10px -252px;
+        padding-bottom: 10px;
         border-bottom: 1px solid #eee;
-        text-align:center;
-        height:28px;
+        text-align: center;
+        height: 28px;
     }
     .lb-header a{
         margin: 0 25px;
@@ -78,8 +77,8 @@
     .u-form-group input[type="email"],
     .u-form-group input[type="password"],
     .u-form-group input[type="text"]{
-        width: calc(50% - 22px);
-        height:45px;
+        width: calc(54.5% - 22px);
+        height: 45px;
         outline: none;
         border: 1px solid #ddd;
         padding: 0 10px;
@@ -414,10 +413,10 @@
         {{ csrf_field() }}
 
         <div class="login-box">
-            <a href="/" id="signup-box-link">Back to main page</a>
-            <br>
-            <a href="/login" id="signup-box-link">Sign Up</a>
-
+            <div class="lb-header">
+                <a href="/" id="signup-box-link">Main page</a>
+                <a href="/login" id="signup-box-link">Sign Up</a>
+            </div>
             <form class="email-signup" method="post">
         <div class="u-form-group">
             <!-- <label for="email">Email:</label> -->
@@ -438,8 +437,9 @@
             <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
         </div>
 
-            </form>
-            </div>
+
+</div></div></form>
+        </div>
 
         @include('partials.formerrors')
     </form>

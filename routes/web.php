@@ -31,3 +31,5 @@ Route::get('/userpage', 'UserController@index');
 Route::post('/changePassword','UserController@changePassword')->name('changePassword');
 
 Route::get('/detailsLike/{movieID}', 'DetailController@favAction');
+
+Route::get('/favouriteList', 'FavouriteListController@index');

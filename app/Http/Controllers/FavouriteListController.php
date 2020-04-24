@@ -40,7 +40,6 @@ class FavouriteListController
                 array_push($totalArray, ["title" => $detailObject->title, "id" => $detailObject->id]);
             }
         }
-        Log::info($totalArray);
         return $totalArray;
     }
 

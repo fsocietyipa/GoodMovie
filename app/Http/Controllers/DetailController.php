@@ -48,7 +48,6 @@ class DetailController extends Controller {
 
     private function isFavourite($userID, $movieID) {
         $model = FavouriteList::where('user_id', $userID)->where('movie_id', $movieID)->first();
-//        Log::info($model);
         return $model!=null;
     }
 

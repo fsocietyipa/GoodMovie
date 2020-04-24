@@ -20,7 +20,6 @@ class UserController extends Controller {
         });
         $user = Auth::user();
         if ($user != null) {
-            Log::info($user["id"]);
             return view("userview", $user);
         } else {
              return view("errorview");

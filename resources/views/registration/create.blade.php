@@ -409,6 +409,7 @@
 
 
 
+
     <form method="POST" action="/register">
         {{ csrf_field() }}
 

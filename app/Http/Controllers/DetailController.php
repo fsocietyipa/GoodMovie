@@ -61,9 +61,8 @@ class DetailController extends Controller {
         if ($user != null) {
             $userID = $user["id"];
             $isFavourite = $this->isFavourite($userID, $movieID);
-            $favouriteID = $this->getFavouriteID($userID, $movieID);
             if ($isFavourite == true) {
-
+                $favouriteID = $this->getFavouriteID($userID, $movieID);
                 $this->delete($favouriteID);
             } else {
                 $this->saveToFav($userID, $movieID);

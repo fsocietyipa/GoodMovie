@@ -1,21 +1,21 @@
 <style>
     .login-box {
-        margin: 250px auto;
+        margin: 250px 540px;
         width: 500px;
         height: 300px;
         background-color: #fff;
         padding: 10px;
-        position:relative;
+        position: absolute;
 
     }
     .lb-header{
-        position:relative;
+        position: relative;
         color: #00415d;
-        margin: 5px 5px 10px 5px;
-        padding-bottom:10px;
+        margin: 5px 5px 10px -246px;
+        padding-bottom: 10px;
         border-bottom: 1px solid #eee;
-        text-align:center;
-        height:28px;
+        text-align: center;
+        height: 28px;
     }
     .lb-header a{
         margin: 0 25px;
@@ -78,8 +78,8 @@
     .u-form-group input[type="email"],
     .u-form-group input[type="password"],
     .u-form-group input[type="text"]{
-        width: calc(50% - 22px);
-        height:45px;
+        width: calc(54.5% - 22px);
+        height: 45px;
         outline: none;
         border: 1px solid #ddd;
         padding: 0 10px;
@@ -239,7 +239,7 @@
         max-width: 100%;
     }
 
-    @media only screen and (max-width: 960px) {
+    @media  only screen and (max-width: 960px) {
         .content{
             padding: 2rem 0;
         }
@@ -304,14 +304,14 @@
         flex-wrap: wrap;
     }
 
-    @media only screen and (min-width: 29.8125rem /* 477px */) {
+    @media  only screen and (min-width: 29.8125rem /* 477px */) {
         .ft-main {
             justify-content: space-between;
             margin-left: 195px;
         }
     }
 
-    @media only screen and (min-width: 77.5rem /* 1240px */) {
+    @media  only screen and (min-width: 77.5rem /* 1240px */) {
         .ft-main {
             justify-content: space-between;
             margin-left: 195px;
@@ -407,23 +407,19 @@
         font-size: 18px;
     }
 </style>
-
-
 <form method="POST" action="/login">
     {{ csrf_field() }}
     <div class="login-box">
-        <a href="/" id="signup-box-link">Back to main page</a>
-        <br>
-        <a href="/register" id="signup-box-link">Registration</a>
-
+        <div class="lb-header">
+            <a href="/" id="signup-box-link">Main page</a>
+            <a href="/register" id="signup-box-link">Registration</a>
+        </div>
         <form class="email-login" method="post">
             <div class="u-form-group">
-                <label for="email">Email:</label>
                 <input type="email" placeholder="Email" name="email" required/>
             </div>
 
             <div class="u-form-group">
-                <label for="password">Password:</label>
                 <input type="password"  placeholder="Password" name="password" required/>
 
                 <div class="form-group">

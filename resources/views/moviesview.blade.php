@@ -4,8 +4,14 @@
             <p class="bold">Upcoming movies</p>
         </div>
         <div class="right">
+            @if ($user == null) {
             <a href="{{ url('register') }}" style="text-decoration: none">Register</a>
             <a class="blue1" href="{{ url('login') }}"  style="text-decoration: none">Login</a>
+            } @else {
+            <a href="{{ url('userpage') }}" style="text-decoration: none">Userpage</a>
+            <a href="{{url('/logout')}}" style="text-decoration: none">Logout</a>
+            }
+            @endif
         </div>
     </div>
 </div>
@@ -19,7 +25,6 @@
         </li>
         </a>
     @endforeach
-
 </ul>
 @if ($currentPage == 1)
     @if ($currentPage < $movieObject->total_pages)
@@ -108,7 +113,7 @@
         cursor: pointer;
         line-height: 330px;
         text-align: center;
-        font-family: FontAwesome;
+        font-family: FontAwesome, serif;
         font-style: normal;
         font-weight: normal;
         -webkit-font-smoothing: antialiased;

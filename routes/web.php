@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'MainController@index');
-
+Route::get('/logout', 'MainController@logout');
 Route::get('/page/{page}', 'MainController@indexByPage');
+//Route::get('/', 'MainController@loggedOrNot');
 
 Route::get('/details/{id}', 'DetailController@indexById');
 

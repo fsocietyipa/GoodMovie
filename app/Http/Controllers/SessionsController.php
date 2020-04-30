@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class SessionsController extends Controller
 {
@@ -11,6 +12,16 @@ class SessionsController extends Controller
     {
         return view('sessions.create');
     }
+
+//    public function store() {
+//        if (auth()->attempt(request(['email', 'password'])) == false) {
+//            return back()->withErrors([
+//                'message' => 'The email or password is incorrect, please try again'
+//            ]);
+//        }
+//
+//        return redirect()->to('/userpage');
+//    }
 
     public function store(Request $request)
     {
@@ -37,12 +48,12 @@ class SessionsController extends Controller
         }
 
         // return redirect()->to('/userpage');
-    
+
 
     public function destroy()
     {
         auth()->logout();
-
+        session()->flush();
         return redirect()->to('/');
     }
 }

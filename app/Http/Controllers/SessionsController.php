@@ -33,7 +33,7 @@ class SessionsController extends Controller
                 'message' => 'The email or password is incorrect, please try again'
             ]);
             }
-        
+
         }
 
         // return redirect()->to('/userpage');

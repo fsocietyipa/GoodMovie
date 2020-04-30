@@ -25,7 +25,7 @@ Route::get('/register', 'RegistrationController@create');
 Route::post('register', 'RegistrationController@store');
 
 Route::get('/login', 'SessionsController@create');
-Route::post('/login', 'SessionsController@store');
+Route::post('/login', [ 'as' => 'login', 'uses' => 'SessionsController@store']);
 Route::get('/logout', 'SessionsController@destroy');
 
 Route::get('/userpage', 'UserController@index');
@@ -35,4 +35,4 @@ Route::get('/detailsLike/{movieID}', 'DetailController@favAction');
 
 Route::get('/favouriteList', 'FavouriteListController@index');
 
-Route::get('/userpage', 'UserController@adminHome')->name('admin.home')->middleware('is_admin');
+//Route::get('/userpage', 'UserController@adminHome')->name('admin.home')->middleware('is_admin');

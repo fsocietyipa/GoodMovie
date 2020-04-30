@@ -13,9 +13,10 @@ class PlanController extends Controller
         return view('plans.index', compact('plans'));
     }
 
-    public function show(\App\Plan $plan, Request $request)
+    public function show(Plan $plan, Request $request)
     {
-        $paymentMethods = $request->user()->paymentMethods();
+
+//        $paymentMethods = $request->user()->paymentMethods();
 
         $intent = $request->user()->createSetupIntent();
         return view('plans.show', compact('plan', 'intent'));

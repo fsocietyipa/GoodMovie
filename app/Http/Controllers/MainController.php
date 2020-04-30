@@ -27,6 +27,7 @@ class MainController extends Controller
     }
 
     public function indexByPage($page) {
+        $user = Auth::user();
         $apiKey = config('services.api.key');
         $url = "https://api.themoviedb.org/3/movie/upcoming?api_key={$apiKey}&page={$page}";
         $client = new \GuzzleHttp\Client();
@@ -34,7 +35,7 @@ class MainController extends Controller
         if ($res->getStatusCode() == 200) {
             $j = $res->getBody();
             $obj = json_decode($j);
-            return view('moviesview', ["movieObject" => $obj, "currentPage" => $page]);
+            return view('moviesview', ["movieObject" => $obj, "currentPage" => $page, "user"=> $user]);
         } else {
             return view('errorview');
         }

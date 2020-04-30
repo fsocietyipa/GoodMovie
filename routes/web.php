@@ -35,4 +35,9 @@ Route::get('/detailsLike/{movieID}', 'DetailController@favAction');
 
 Route::get('/favouriteList', 'FavouriteListController@index');
 
+
+Route::any('/search',function(){
+
+});
+
 //Route::get('/userpage', 'UserController@adminHome')->name('admin.home')->middleware('is_admin');

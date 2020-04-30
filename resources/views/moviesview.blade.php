@@ -4,13 +4,12 @@
             <p class="bold">Upcoming movies</p>
         </div>
         <div class="right">
-            @if ($user == null) {
-            <a href="{{ url('register') }}" style="text-decoration: none">Register</a>
-            <a class="blue1" href="{{ url('login') }}"  style="text-decoration: none">Login</a>
-            } @else {
-            <a href="{{ url('userpage') }}" style="text-decoration: none">Userpage</a>
-            <a href="{{url('/logout')}}" style="text-decoration: none">Logout</a>
-            }
+            @if ($user == null)
+                <a href="{{ url('register') }}" style="text-decoration: none">Register</a>
+                <a class="blue1" href="{{ url('login') }}"  style="text-decoration: none">Login</a>
+            @else
+                <a href="{{ url('userpage') }}" style="text-decoration: none">Userpage</a>
+                <a href="{{url('/logout')}}" style="text-decoration: none">Logout</a>
             @endif
         </div>
     </div>

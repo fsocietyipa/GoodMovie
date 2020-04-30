@@ -1,8 +1,7 @@
 <div class="movie-list">
     <div class="title-bar">
         <div class="left">
-{{--            <p class="bold">Upcoming movies</p>--}}
-            <img src="images/logotip.png" class="logo" alt="">
+            <p class="bold">Upcoming movies</p>
         </div>
         <div class="right">
             @if ($user == null)
@@ -93,7 +92,7 @@
         font-size: 20px;
     }
     a {
-        color: black;
+        color: #999;
         margin-left: 10px;
     }
     .right:hover {

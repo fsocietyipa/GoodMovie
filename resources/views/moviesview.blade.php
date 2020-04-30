@@ -1,7 +1,7 @@
 <div class="movie-list">
     <div class="title-bar">
         <div class="left">
-            <p class="bold">Upcoming movies</p>
+            <img  src="images/logotip.png" class="logo" alt="">
         </div>
         <div class="right">
             @if ($user == null)

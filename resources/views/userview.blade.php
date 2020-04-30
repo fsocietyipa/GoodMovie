@@ -1,11 +1,12 @@
 <div class="user-page">
     <div class="header">
-        <div class="welcome">Welcome {{$email ?? ''}}</div>
-        <a class="back" href="/" type="button">
-            Back to main page
-        </a>
+        <a href="/"><img  src="images/logotip.png" class="logos" alt=""></a>
+        <div class="welcome">Welcome {{$username ?? ''}}</div>
+{{--        <a class="back" href="/" type="button">--}}
+{{--            Back to main page--}}
+{{--        </a>--}}
         <a href="/favouriteList">
-            <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/favListIcon.png') !!}"/>
+            <img width=100 height=100  style="vertical-align: top;float: right;margin-top: -180px;" src="{!! asset('images/favListIcon.png') !!}"/>
         </a>
     </div>
     <div class="content">
@@ -33,12 +34,15 @@
         </div>
 </div>
 <style>
+    .logos {
+        display: flex; width: 230px; height: 60px; margin-left: 35px;
+    }
     .welcome {
         font-size: 60px;
         font-family: fantasy;
-        color: red;
-        margin-left: 330px;
-        margin-top: 50px;
+        color: black;
+        margin-left: 324px;
+        margin-top: 35px;
     }
     .back {
         font-size: 30px;
@@ -55,7 +59,7 @@
         color: red;
     }
     .content {
-        margin-top: 100px;
+        margin-top: 40px;
     }
     .form__legend {
         margin-left: 330px;
@@ -95,7 +99,7 @@
         font-family: "Open Sans", sans-serif;
         font-size: 20px;
         margin-top: 25px;
-        background: #ff3434;
+        background: #000000;
         border: none;
         color: white;
         font-weight: bold;

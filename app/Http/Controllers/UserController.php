@@ -9,7 +9,19 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 
+
 class UserController extends Controller {
+
+    public function __construct()
+        {
+            $this->middleware('auth');
+        }
+
+    public function adminHome()
+    {
+        return view('adminHome');
+    }
+
     public function index() {
         $this->middleware('auth');
         $this->middleware(function ($request, $next) {

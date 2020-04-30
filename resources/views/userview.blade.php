@@ -1,6 +1,6 @@
 <div class="user-page">
     <div class="header">
-        <div class="welcome">Welcome {{$email}}</div>
+        <div class="welcome">Welcome {{$email ?? ''}}</div>
         <a class="back" href="/" type="button">
             Back to main page
         </a>

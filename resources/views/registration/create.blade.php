@@ -409,7 +409,6 @@
 
 
 
-
     <form method="POST" action="/register">
         {{ csrf_field() }}
 
@@ -419,6 +418,12 @@
                 <a href="/login" id="signup-box-link">Sign Up</a>
             </div>
             <form class="email-signup" method="post">
+
+        <div class="u-form-group">
+                    <!-- <label for="email">Email:</label> -->
+                    <input type="text" placeholder="Username" name="username" required/>
+        </div>
+
         <div class="u-form-group">
             <!-- <label for="email">Email:</label> -->
             <input type="email" placeholder="Email" name="email" required/>
@@ -432,6 +437,14 @@
         <div class="u-form-group">
             <!-- <label for="password_confirmation">Password Confirmation:</label> -->
             <input type="password" class="form-control" placeholder="Confirm password" id="password_confirmation" name="password_confirmation" required/>
+
+        <div class="u-form-group">
+                    <br>
+                    <input type="radio" id="is_admin1" name="is_admin"  value="Admin">
+                    <label for="admin">Admin</label><br>
+                    <input type="radio" id="is_admin2" name="is_admin" value="User">
+                    <label for="user">User</label><br>
+        </div>
 
             <div class="u-form-group">
         <div class="form-group">

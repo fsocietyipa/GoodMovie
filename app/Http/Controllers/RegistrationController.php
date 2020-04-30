@@ -24,7 +24,6 @@ class RegistrationController extends Controller
         $user = User::create(request(['username', 'email', 'password', 'is_admin']));
 
         auth()->login($user);
-
         return redirect()->to('/');
 //        return view('errorview');
     }

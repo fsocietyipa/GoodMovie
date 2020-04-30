@@ -7,6 +7,9 @@
         <a href="/favouriteList">
             <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/favListIcon.png') !!}"/>
         </a>
+        <a href="/plans">
+            <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/money.png') !!}"/>
+        </a>
     </div>
     <div class="content">
         <div class="form__legend">

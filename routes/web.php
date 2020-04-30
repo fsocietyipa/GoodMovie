@@ -27,8 +27,12 @@ Route::post('register', 'RegistrationController@store');
 Route::get('/login', 'SessionsController@create');
 Route::post('/login', [ 'as' => 'login', 'uses' => 'SessionsController@store']);
 Route::get('/logout', 'SessionsController@destroy');
+Route::post('/logout', [ 'as' => 'logout', 'uses' => 'SessionsController@destroy']);
+
 
 Route::get('/userpage', 'UserController@index');
+Route::post('/userpage', [ 'as' => 'userpage', 'uses' => 'UserController@index']);
+
 Route::post('/changePassword','UserController@changePassword')->name('changePassword');
 
 Route::get('/detailsLike/{movieID}', 'DetailController@favAction');
@@ -36,8 +40,11 @@ Route::get('/detailsLike/{movieID}', 'DetailController@favAction');
 Route::get('/favouriteList', 'FavouriteListController@index');
 
 
-Route::any('/search',function(){
-
+Route::group(['middleware' => 'auth'], function() {
+//    Route::get('/', 'MainController@index');
+    Route::get('/plans', 'PlanController@index')->name('plans.index');
+    Route::get('/plan/{plan}', 'PlanController@show')->name('plans.show');
+    Route::post('/subscription', 'SubscriptionController@create')->name('subscription.create');
 });
 
 //Route::get('/userpage', 'UserController@adminHome')->name('admin.home')->middleware('is_admin');

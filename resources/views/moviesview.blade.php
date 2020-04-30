@@ -1,15 +1,15 @@
 <div class="movie-list">
     <div class="title-bar">
         <div class="left">
-            <p class="bold">Upcoming movies</p>
+            <a href="/"><img  src="images/logotip.png" class="logo" alt=""></a>
         </div>
         <div class="right">
             @if ($user == null)
-                <a href="{{ url('register') }}" style="text-decoration: none">Register</a>
-                <a class="blue1" href="{{ url('login') }}"  style="text-decoration: none">Login</a>
-            @else
-                <a href="{{ url('userpage') }}" style="text-decoration: none">Userpage</a>
-                <a href="{{url('/logout')}}" style="text-decoration: none">Logout</a>
+            <a  class="hovercolor" href="{{ url('register') }}" style="text-decoration: none">Register</a>
+            <a class="blue1 hovercolor" href="{{ url('login') }}"  style="text-decoration: none">Login</a>
+             @else
+            <a  class="hovercolor" href="{{ url('userpage') }}" style="text-decoration: none">Userpage</a>
+            <a  class="hovercolor" href="{{url('/logout')}}" style="text-decoration: none">Logout</a>
             @endif
         </div>
     </div>
@@ -43,11 +43,23 @@
 
 <style>
     @import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-
+    .logo {
+        display: flex;
+        width: 230px;
+        height: 60px;
+        margin-left: 35px;
+    }
     ul {
         list-style-type: none;
     }
-
+    .hovercolor {
+        font-family: sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+   }
+    .hovercolor:hover{
+        color: #FFC107;
+    }
     .title-bar {
         padding: 20px;
         border-bottom: 1px solid #DDD;
@@ -76,10 +88,15 @@
 
     .right {
         float: right;
+        margin-top: 15px;
+        font-size: 20px;
     }
     a {
         color: #999;
         margin-left: 10px;
+    }
+    .right:hover {
+        color: red;
     }
     a.blue1 {
         color: #279CEB;
@@ -145,6 +162,10 @@
         font-weight: bold;
         font-size: 60%;
         margin-bottom: 4px;
+        color: black;
+        position: static;
+        display: flex;
+        text-decoration: none;
     }
 
     .genre {

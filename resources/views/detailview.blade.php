@@ -2,6 +2,40 @@
 <link rel="stylesheet" href="/css/app.css">
 
 <style>
+    body {
+        background: gainsboro;
+    }
+    .backMainPage {
+        display: flex;
+        position: fixed;
+        margin-top: 250px;
+        margin-left: 15px;
+    }
+    .column1 {
+        padding-left: 35px;
+        padding-top: 120px;
+        width: 220px;
+        float: left;
+        text-align: center;
+    }.title1 {
+             color: white;
+             font-size: 44px;
+             margin-bottom: 13px;
+             position: relative;
+             white-space: inherit;
+             margin-left: -20px;
+         }
+     .title2 {
+         margin-left: -15px;
+     }
+    .container {
+        margin: 0 auto;
+        width: 780px;
+        height: 640px;
+        background: #ffffff;
+        border-radius: 5px;
+        position: relative;
+    }
     .hero:before {
         background: url("https://image.tmdb.org/t/p/w780{{$detailObject->backdrop_path}}");
         display: flex;
@@ -14,6 +48,11 @@
     }
     .compNames {
         padding: 10px;
+    }
+    .rating {
+        border: none;
+        float: left;
+        margin-left: -18px;
     }
 </style>
 
@@ -74,7 +113,7 @@
 
             <div class="column2">
 
-                <p>{{$detailObject->overview}}</p>
+                <p style="color: black;">{{$detailObject->overview}}</p>
 
                 <div class="avatars">
                     @foreach($detailObject->production_companies as $comp)
@@ -84,6 +123,8 @@
                     @endforeach
                 </div>
             </div>
+            <div class="backMainPage"><a href="/">Back</a></div>
+
         </div>
 
 

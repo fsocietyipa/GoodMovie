@@ -19,7 +19,7 @@ class UserController extends Controller {
 
     public function adminHome()
     {
-        return view('adminHome');
+        return view('userview');
     }
 
     public function index() {

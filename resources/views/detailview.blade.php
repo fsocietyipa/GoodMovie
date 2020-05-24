@@ -113,7 +113,7 @@
 
             <div class="column2">
 
-                <p style="color: black;">{{$detailObject->overview}}</p>
+                <p style="color: black;font-size: 11px;}">{{$detailObject->overview}}</p>
 
                 <div class="avatars">
                     @foreach($detailObject->production_companies as $comp)

@@ -1,16 +1,31 @@
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Yellowtail" />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
 <div class="user-page">
     <div class="header">
         <a href="/"><img  src="images/logotip.png" class="logos" alt=""></a>
-        <div class="welcome">Welcome {{$username ?? ''}}</div>
+        <script>
+            var msg = '{{session()->get('success')}}';
+            var exist = '{{session()->has('success')}}';
+            if(exist){
+                alert(msg);
+            }
+        </script>
+        <div class="welcome-user">
+            <div class="welcome">Welcome</div>
+            <div class="name"><p>{{$username ?? ''}}</p></div>
+        </div>
+        <div class="links">
+                    <a href="/favouriteList" >
+                        <img  class="favourite" src="{!! asset('images/favListIcon.png') !!}"/>
+                    </a>
+                    <a href="/plans" class="plans">
+                        <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/money.png') !!}"/>
+                    </a>
+        </div>
 {{--        <a class="back" href="/" type="button">--}}
 {{--            Back to main page--}}
 {{--        </a>--}}
-        <a href="/favouriteList">
-            <img width=100 height=100  style="vertical-align: top;float: right;margin-top: -180px;" src="{!! asset('images/favListIcon.png') !!}"/>
-        </a>
-        <a href="/plans">
-            <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/money.png') !!}"/>
-        </a>
+
     </div>
     <div class="content">
         <div class="form__legend">
@@ -40,12 +55,46 @@
     .logos {
         display: flex; width: 230px; height: 60px; margin-left: 35px;
     }
+    .welcome-user {
+        display: block;
+    }
     .welcome {
-        font-size: 60px;
-        font-family: fantasy;
-        color: black;
-        margin-left: 324px;
-        margin-top: 35px;
+        font-size: 120px;
+        color: #ed5b8d;
+        text-align: center;
+        margin-top: 80px;
+        font-family: Yellowtail;
+        font-style: normal;
+        font-variant: normal;
+        line-height: 7.7px;
+    }
+    .name {
+        text-align: center;
+        font-family: 'Yellowtail', sans-serif;
+        margin-top: -45px;
+        font-size: 86px;
+        color: #ed5b8d;
+        letter-spacing: -1px;
+    }
+    .links {
+        margin-right: 30px;
+        margin-top: -305px;
+    }
+    .favourite {
+        width: 100px;
+        height: 100px;
+        vertical-align: top;
+        float: right;
+        /*margin-top: -180px;*/
+        margin-top: -70px;
+    }
+    .plans {
+        width: 100px;
+        height: 100px;
+        vertical-align: top;
+        float: right;
+        /*margin-top: -180px;*/
+        margin-top: -70px;
     }
     .back {
         font-size: 30px;
@@ -62,12 +111,15 @@
         color: red;
     }
     .content {
-        margin-top: 40px;
+        margin-top: 363px;
+        display: block;
+        text-align: center;
     }
     .form__legend {
-        margin-left: 330px;
-        font-family: "Open Sans", sans-serif;
+        /*margin-left: 330px;*/
+        font-family: "Oswald", sans-serif;
         font-size: 20px;
+        text-align: center;
     }
     .form__legend:after {
         position: absolute;
@@ -81,31 +133,21 @@
         font-size: 20px;
         font-family: auto, serif;
         color: #000000;
-        margin-left: 330px;
+        /*margin-left: 330px;*/
         display: block;
         margin-top: 25px;
     }
     .input-new-password, .input-old-password, .confirmation-new-password {
-        width: 40%;
-        font-size: 15px;
-        padding: 15px 12px;
-        margin-bottom: 5px;
-        border: 1px solid #e5e5e5;
-        border-bottom: 2px solid #ddd;
-        background: rgba(255,255,255,0.2) !important;
-        color: #555;
-        border-radius: 5px;
-
+        width: 280px; font-size: 12px; padding: 15px 12px;font-family: "Oswald", sans-serif; margin-bottom: 5px; border: 1px solid #e5e5e5; border-bottom: 2px solid #ddd; background: rgba(255,255,255,0.2) !important; color: #555; border-radius: 5px;
     }
     .submit {
-        margin-left: 575px;
-        font-family: "Open Sans", sans-serif;
-        font-size: 20px;
+        /*margin-left: 575px;*/
+        font-family: "Oswald", sans-serif;
+        font-size: 12px;
         margin-top: 25px;
         background: #000000;
         border: none;
         color: white;
-        font-weight: bold;
         padding: 10px 30px;
         border-radius: 5px;
     }

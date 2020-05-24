@@ -25,19 +25,26 @@
         </a>
     @endforeach
 </ul>
+
+<div class ="container">
+    <div class ="pagination p7">
+        <ul>
 @if ($currentPage == 1)
     @if ($currentPage < $movieObject->total_pages)
-        <a href="/page/{{$currentPage+1}}">Next</a>
+        <a class="p7"  href="/page/{{$currentPage+1}}">Next</a>
     @endif
 
     @else
         @if ($currentPage == $movieObject->total_pages)
-            <a href="/page/{{$currentPage-1}}">Prev</a>
+            <a class="p7" href="/page/{{$currentPage-1}}">Prev</a>
         @else
-            <a href="/page/{{$currentPage-1}}">Prev</a>
-            <a href="/page/{{$currentPage+1}}">Next</a>
+            <a  class="p7" href="/page/{{$currentPage-1}}">Prev</a>
+            <a class="p7"   href="/page/{{$currentPage+1}}">Next</a>
         @endif
 @endif
+        </ul>
+    </div>
+</div>
 
 
 
@@ -172,4 +179,68 @@
         color: #999;
         font-size: 12px;
     }
+
+    /*button next*/
+
+
+
+
+    /* GRID */
+    .seven { width: 57.66%; }
+
+
+    .container{
+        width: 100%;
+        max-width: 940px;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+    }
+
+    .pagination{
+        padding: 30px 0;
+    }
+
+    .pagination ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .pagination a{
+        display: inline-block;
+        padding: 10px 18px;
+        color: #222;
+    }
+
+
+    /* SEVEN */
+
+    .p7 a{
+        font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+        -webkit-appearance: none;
+        font-size: 1rem;
+        text-shadow: none;
+        line-height: 1.2;
+        display: inline-block;
+        padding: 10px 16px;
+        margin: 0 10px 0 0;
+        position: relative;
+        border-radius: 4px;
+        border: 3px solid transparent;
+        background: #444857;
+        color: white;
+        cursor: pointer;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none !important;
+        text-align: center;
+        font-weight: normal !important;
+    }
+
+    .p7 .is-active{
+        background-color: #444857;
+        color: White;
+    }
+
 </style>

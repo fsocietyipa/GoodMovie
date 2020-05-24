@@ -19,6 +19,6 @@ class SubscriptionController extends Controller
         $user->newSubscription('main', $plan->plan_id)->create($paymentMethod, ['email' => $user->email,]);
 
 
-        return redirect()->route('userpage');
+        return redirect()->route('userpage')->with('success', 'Your plan subscribed successfully');
     }
 }

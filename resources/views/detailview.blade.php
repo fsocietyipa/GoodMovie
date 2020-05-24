@@ -11,6 +11,7 @@
         margin-top: 250px;
         margin-left: 15px;
     }
+
     .column1 {
         padding-left: 35px;
         padding-top: 120px;
@@ -18,31 +19,43 @@
         float: left;
         text-align: center;
     }.title1 {
-             color: white;
+             color: blanchedalmond;
              font-size: 44px;
              margin-bottom: 13px;
              position: relative;
              white-space: inherit;
              margin-left: -20px;
          }
+
+    .details .title1{
+    color:blanchedalmond
+    }
+
+
+    .details .title2{
+    color:blanchedalmond
+    }
      .title2 {
          margin-left: -15px;
      }
     .container {
         margin: 0 auto;
         width: 780px;
-        height: 640px;
+        height: 800px;
         background: #ffffff;
         border-radius: 5px;
         position: relative;
     }
     .hero:before {
+         filter: blur(8px);
+          -webkit-filter: blur(8px);
         background: url("https://image.tmdb.org/t/p/w780{{$detailObject->backdrop_path}}");
         display: flex;
         justify-content: center;
         height: 400px;
         overflow: hidden;
     }
+
     img {
         flex: none;
     }
@@ -113,7 +126,7 @@
 
             <div class="column2">
 
-                <p style="color: black;font-size: 11px;}">{{$detailObject->overview}}</p>
+                <p style="color: black;">{{$detailObject->overview}}</p>
 
                 <div class="avatars">
                     @foreach($detailObject->production_companies as $comp)
@@ -123,7 +136,7 @@
                     @endforeach
                 </div>
             </div>
-            <div class="backMainPage"><a href="/">Back</a></div>
+            <div class="backMainPage"><a href="/"><img src = "/images/back.png" style = "width:24px; height:24px" title = "Shoto tam"></a></div>
 
         </div>
 

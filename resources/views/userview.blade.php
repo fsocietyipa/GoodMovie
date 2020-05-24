@@ -3,6 +3,13 @@
 <div class="user-page">
     <div class="header">
         <a href="/"><img  src="images/logotip.png" class="logos" alt=""></a>
+        <script>
+            var msg = '{{session()->get('success')}}';
+            var exist = '{{session()->has('success')}}';
+            if(exist){
+                alert(msg);
+            }
+        </script>
         <div class="welcome-user">
             <div class="welcome">Welcome</div>
             <div class="name"><p>{{$username ?? ''}}</p></div>

@@ -75,21 +75,27 @@
 
         <a href="#"><img  width=200 height=300 src="https://image.tmdb.org/t/p/original/{{$detailObject->poster_path}}" alt="cover" class="cover" /></a>
         <div class="hero">
-            @if($isLoggedIn == true)
                 <span class="like-btn">
-                    @if($isFavourite == true)
-                        <a href="/detailsLike/{{$detailObject->id}}">
-                            <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/favouriteFull.png') !!}"/>
-                        </a>
-                    @else
-                        <a href="/detailsLike/{{$detailObject->id}}">
-                            <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/favouriteEmpty.png') !!}"/>
-                        </a>
+                    <a href="/reviews/{{$detailObject->id}}">
+                        <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/reviews.png') !!}"/>
+                    </a>
+                    @if($isLoggedIn == true)
+                        @if($isFavourite == true)
+                            <a href="/detailsLike/{{$detailObject->id}}">
+                                <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/favouriteFull.png') !!}"/>
+                            </a>
+                        @else
+                            <a href="/detailsLike/{{$detailObject->id}}">
+                                <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/favouriteEmpty.png') !!}"/>
+                            </a>
+                        @endif
                     @endif
+
                 </span>
+            @if($isLoggedIn == true)
                 <a href="/favouriteList">
-                    <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/favListIcon.png') !!}"/>
-                </a>
+                        <img width=100 height=100  style="vertical-align:top; float:right" src="{!! asset('images/favListIcon.png') !!}"/>
+                    </a>
             @endif
             <div class="details">
                 @if($detailObject->adult == true)

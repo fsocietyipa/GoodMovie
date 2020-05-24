@@ -3,6 +3,8 @@
 - Valikahnov Okzhetpes
 - Medelbekov Mirat
 - Sagymbekov Adil
+- Aubakirov Amirlan
+
 
 ### How to run this project
 ```

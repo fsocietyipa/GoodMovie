@@ -17,6 +17,7 @@ Route::get('/', 'MainController@index');
 Route::get('/logout', 'MainController@logout');
 Route::get('/page/{page}', 'MainController@indexByPage');
 //Route::get('/', 'MainController@loggedOrNot');
+Route::get('/reviews/{id}', 'ReviewsController@indexById');
 
 Route::get('/details/{id}', 'DetailController@indexById');
 
